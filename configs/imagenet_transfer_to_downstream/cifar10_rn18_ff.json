@@ -1,0 +1,52 @@
+{
+    "network": {
+        "architecture": "resnet18",
+        "blurpool": 0,
+        "pretrained_ckpt": "file/experiments/imagenet_train_from_scratch/2023-04-08-02-38-45-255598/checkpoints/best.ckpt",
+        "finetune_method": "ff"
+    },
+    "dataset": {
+        "train_path": "../../data/cifar10",
+        "test_path": "../../data/cifar10",
+        "num_workers": 8,
+        "in_memory": 0
+    },
+    "train": {
+        "seed": 43856,
+        "epoch": 200,
+        "batch_size": 128,
+        "label_smoothing": 0.0,
+        "scheduler_type": "cosine",
+        "progressive_resize": 0,
+        "optimizer": {
+            "lr": 0.0001,
+            "weight_decay": 0.0
+        },
+        "scheduler": {
+            "step": {
+                "step_ratio": null,
+                "step_size": null
+            },
+            "cyclic": {
+                "lr_peak_epoch": null
+            }
+        },
+        "progressive_resolution": {
+            "min_res": null,
+            "max_res": null,
+            "end_ramp": null,
+            "start_ramp": null
+        },
+        "static_resolution": {
+            "res": 160
+        }
+    },
+    "test": {
+        "batch_size": 1024,
+        "resolution": 160,
+        "lr_tta": 0
+    },
+    "logging": {
+        "save_intermediate_frequency": null
+    }
+}

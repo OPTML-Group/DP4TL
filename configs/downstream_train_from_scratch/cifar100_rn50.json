@@ -1,0 +1,48 @@
+{
+    "network": {
+        "architecture": "resnet50"
+    },
+    "dataset": {
+        "train_path": "../../data/cifar100",
+        "test_path": "../../data/cifar100",
+        "num_workers": 8,
+        "in_memory": 0
+    },
+    "train": {
+        "seed": 43856,
+        "epoch": 200,
+        "batch_size": 128,
+        "scheduler_type": "cosine",
+        "progressive_resize": 0,
+        "optimizer": {
+            "lr": 0.01,
+            "weight_decay": 5e-4
+        },
+        "scheduler": {
+            "step": {
+                "step_ratio": null,
+                "step_size": null
+            },
+            "cyclic": {
+                "lr_peak_epoch": null
+            }
+        },
+        "progressive_resolution": {
+            "min_res": null,
+            "max_res": null,
+            "end_ramp": null,
+            "start_ramp": null
+        },
+        "static_resolution": {
+            "res": 160
+        }
+    },
+    "test": {
+        "batch_size": 1024,
+        "resolution": 160,
+        "lr_tta": 0
+    },
+    "logging": {
+        "save_intermediate_frequency": null
+    }
+}

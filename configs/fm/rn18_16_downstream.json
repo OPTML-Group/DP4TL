@@ -1,0 +1,9 @@
+{
+    "cfg":{
+        "source_train_label_path": "file/labels/imagenet_train.label",
+        "source_val_label_path": "file/labels/imagenet_val.label",
+        "architecture": "resnet18",
+        "retain_class_nums": "50,100,150,200,250,300,350,400,450,500,550,600,650,700,750,800,850,900,950",
+        "pretrained_ckpt": "file/experiments/imagenet_train_from_scratch/2023-04-08-02-38-45-255598/checkpoints/best.ckpt"
+    }
+}
